@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YFit | واي فِت — كوتشك في جيبك</title>
+<meta name="description" content="YFit تطبيق كوتش يوسف للتخسيس والمتابعة: جدول أسبوعي من الكوتش، جدول أكل محسوب بالجرام من الأكل المصري، تمرين، شات وفيديو مع الكوتش، وتشيك إن أسبوعي.">
+<meta name="theme-color" content="#E2531A">
+<meta property="og:title" content="YFit | واي فِت — كوتشك في جيبك">
+<meta property="og:description" content="برنامج تخسيس ومتابعة يوم بيوم مع كوتش يوسف.">
+<meta property="og:image" content="img/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--or:#E2531A;--or2:#F07A3A;--ink:#1F2A24;--muted:#5E6B62;--cream:#F6F2E9;--card:#FFFDF8;--line:#E7E0D1;--navy:#1B3A4B;--navy2:#122733;--green:#0E9F6E}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Cairo,"Noto Sans Arabic",Tahoma,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(246,242,233,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:20px}
+.brand img{width:38px;height:38px;border-radius:11px}
+.brand small{display:block;font-size:11px;font-weight:600;color:var(--muted);line-height:1}
+.links{display:flex;gap:22px;font-weight:700;font-size:14px}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--or)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:14px;padding:12px 20px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-or{background:var(--or);color:#fff;box-shadow:0 10px 24px -10px rgba(226,83,26,.7)}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.btn-sm{padding:9px 16px;font-size:14px;border-radius:12px}
+@media(max-width:760px){.links{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:56px 0 30px}
+.hero:before{content:"";position:absolute;inset:-30% -20% auto auto;width:720px;height:720px;background:radial-gradient(circle,rgba(226,83,26,.18),transparent 62%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:800;color:var(--or)}
+h1{font-size:clamp(36px,6vw,62px);line-height:1.15;margin:18px 0 14px;font-weight:900;letter-spacing:-.5px}
+h1 em{font-style:normal;color:var(--or);position:relative;white-space:nowrap}
+h1 em:after{content:"";position:absolute;inset:auto 0 4px 0;height:12px;background:rgba(226,83,26,.18);border-radius:6px;z-index:-1}
+.lead{font-size:18px;color:var(--muted);max-width:540px;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.play{display:inline-flex;align-items:center;gap:10px;background:#111;color:#fff;border-radius:14px;padding:10px 18px;text-decoration:none}
+.play svg{width:26px;height:26px}
+.play b{display:block;font-size:16px;line-height:1.1}
+.play span{display:block;font-size:11px;opacity:.75;line-height:1.2}
+.soon{font-size:12px;color:var(--muted);margin-top:10px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:14px;font-weight:700;color:var(--muted)}
+.checks span:before{content:"✓";color:var(--green);margin-inline-end:6px;font-weight:900}
+
+/* phones */
+.phones{position:relative;height:560px}
+.phone{position:absolute;width:250px;border-radius:34px;padding:9px;background:#111;box-shadow:0 30px 60px -20px rgba(31,42,36,.45)}
+.phone img{border-radius:26px;aspect-ratio:9/16;object-fit:cover;width:100%}
+.phone.p1{right:6%;top:0;transform:rotate(3deg);z-index:2}
+.phone.p2{left:4%;top:70px;transform:rotate(-6deg);opacity:.96}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.phones{height:470px;max-width:420px;margin:0 auto;width:100%}.phone{width:210px}}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 40px}
+.sec-head .tag{color:var(--or);font-weight:900;font-size:14px}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.25;margin:6px 0 10px;font-weight:900}
+.sec-head p{color:var(--muted);margin:0}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.f{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;transition:transform .2s,box-shadow .2s}
+.f:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(31,42,36,.4)}
+.f .ic{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(226,83,26,.1);margin-bottom:14px}
+.f h3{margin:0 0 6px;font-size:19px;font-weight:900}
+.f p{margin:0;color:var(--muted);font-size:15px}
+.f.big{grid-column:span 2;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:0;display:flex;gap:22px;align-items:center}
+.f.big p{color:rgba(255,255,255,.8)}
+.f.big .ic{background:rgba(255,255,255,.14)}
+.f.big img{width:150px;border-radius:18px;flex:0 0 auto;box-shadow:0 14px 30px -12px rgba(0,0,0,.6)}
+@media(max-width:900px){.features{grid-template-columns:1fr 1fr}.f.big{grid-column:span 2}}
+@media(max-width:600px){.features{grid-template-columns:1fr}.f.big{grid-column:auto;flex-direction:column;align-items:flex-start}.f.big img{width:100%;max-width:260px}}
+
+/* screens */
+.screens{background:#fff;border-block:1px solid var(--line)}
+.rail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 22px;margin:0 -20px}
+.rail::-webkit-scrollbar{height:8px}.rail::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+.shot{flex:0 0 220px;scroll-snap-align:center;text-align:center}
+.shot img{border-radius:24px;border:6px solid #111;aspect-ratio:9/16;object-fit:cover;width:100%;box-shadow:0 16px 30px -18px rgba(0,0,0,.5)}
+.shot b{display:block;margin-top:10px;font-size:14px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 24px 24px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;top:-18px;right:24px;width:40px;height:40px;border-radius:12px;background:var(--or);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px -8px rgba(226,83,26,.8)}
+.step h3{margin:6px 0 6px;font-size:18px;font-weight:900}
+.step p{margin:0;color:var(--muted);font-size:15px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:28px}}
+
+/* coach */
+.coach{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:34px}
+.avatar{aspect-ratio:1;border-radius:24px;background:linear-gradient(135deg,var(--or),#B83A0C);display:flex;align-items:center;justify-content:center;color:#fff;font-size:110px;font-weight:900;position:relative;overflow:hidden}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.coach ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.coach li{display:flex;gap:10px;align-items:flex-start;color:var(--muted)}
+.coach li b{color:var(--ink)}
+@media(max-width:760px){.coach{grid-template-columns:1fr;padding:22px}.avatar{max-width:260px;width:100%;margin:0 auto;font-size:90px}}
+
+/* faq */
+.faq{max-width:780px;margin:0 auto;display:grid;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px}
+summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--or);font-size:22px;line-height:1;font-weight:900}
+details[open] summary:after{content:"–"}
+details p{margin:10px 0 0;color:var(--muted)}
+
+/* final cta */
+.final{background:linear-gradient(135deg,var(--or),#B83A0C);color:#fff;border-radius:30px;padding:46px 30px;text-align:center;position:relative;overflow:hidden}
+.final:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.08);left:-120px;bottom:-200px}
+.final h2{color:#fff}
+.final p{opacity:.9;margin:0 0 22px}
+.final .btn-ghost{border:0}
+.btn-wa{background:#25D366;color:#fff;box-shadow:0 10px 24px -10px rgba(37,211,102,.7)}
+
+footer{padding:36px 0 46px;color:var(--muted);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:24px}
+.foot nav{display:flex;flex-wrap:wrap;gap:18px}
+.foot a{text-decoration:none;font-weight:700}
+.foot a:hover{color:var(--or)}
+.disclaimer{font-size:12px;margin-top:14px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn,.f{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="شعار YFit"><span>YFit<small>واي فِت</small></span></a>
+    <nav class="links"><a href="#features">المميزات</a><a href="#screens">شكل التطبيق</a><a href="#coach">الكوتش</a><a href="#faq">أسئلة</a></nav>
+    <a class="btn btn-or btn-sm" href="#download">حمّل التطبيق</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">🔥 برنامج تخسيس ومتابعة مع كوتش يوسف</span>
+        <h1>كوتشك <em>في جيبك</em><br>كل يوم.</h1>
+        <p class="lead">جدولك الأسبوعي بيوصلك من الكوتش، أكلك محسوب بالجرام من الأكل المصري اللي في بيتك، وتمرينك متسجّل. ولو احتجت حاجة، الكوتش معاك على الشات.</p>
+        <div class="cta" id="download">
+          <a class="play" href="#download" aria-label="قريباً على Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2z"/><path fill="#FBBC04" d="m16.8 8.6-3.4 3.4 3.4 3.4 3.8-2.2c.9-.5.9-1.9 0-2.4z"/><path fill="#4285F4" d="M3.6 22.2 13.4 12l3.4 3.4L5 22.1c-.5.3-1 .3-1.4.1z"/><path fill="#EA4335" d="M3.6 1.8c.4-.2.9-.2 1.4.1l11.8 6.7-3.4 3.4z"/></svg>
+            <span><span>قريباً على</span><b>Google Play</b></span>
+          </a>
+          <a class="btn btn-wa" href="https://wa.me/201121166099?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%83%D9%88%D8%AA%D8%B4%20%D9%8A%D9%88%D8%B3%D9%81%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B4%D8%AA%D8%B1%D9%83%20%D9%81%D9%8A%20YFit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> كلّم الكوتش واتساب</a>
+        </div>
+        <p class="soon">التطبيق في مرحلة التجربة دلوقتي، وهيبقى متاح للتحميل قريب جداً.</p>
+        <div class="checks"><span>عربي بالكامل</span><span>أكلات مصرية</span><span>بيشتغل من غير نت</span></div>
+      </div>
+      <div class="phones" aria-hidden="true">
+        <div class="phone p2"><img src="img/plan.jpg" alt=""></div>
+        <div class="phone p1"><img src="img/week.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="tag">المميزات</span><h2>كل اللي محتاجه علشان توصل لهدفك</h2><p>من أول جدول الأكل لحد رسالة الكوتش. كل حاجة في مكان واحد وبالعربي.</p></div>
+      <div class="features">
+        <div class="f big reveal">
+          <div><div class="ic">📋</div><h3>جدولك الأسبوعي من الكوتش</h3><p>كل أسبوع بيوصلك كارت جديد فيه وجباتك ومقاديرها والماكروز، وإشعار أول ما ينزل. علّم على كل وجبة بتاكلها، والكوتش يتابع التزامك.</p></div>
+          <img src="img/week.jpg" alt="كارت الأسبوع من الكوتش داخل التطبيق" loading="lazy">
+        </div>
+        <div class="f reveal"><div class="ic">🍽️</div><h3>أكلك محسوب بالجرام</h3><p>سعراتك وماكروزك محسوبين على وزنك وهدفك، ووزن كل صنف مكتوب مطبوخ ونيء، ومعاه أكتر من 230 أكلة مصرية.</p></div>
+        <div class="f reveal"><div class="ic">📸</div><h3>صوّر طبقك</h3><p>سجّل أكلك بصوتك، أو صوّر الطبق والذكاء الاصطناعي يحسبه، أو امسح باركود المنتج.</p></div>
+        <div class="f reveal"><div class="ic">🎬</div><h3>فيديو للكوتش</h3><p>صوّر نفسك وإنت بتلعب التمرين وابعته، والكوتش يعلّق على الثانية بالظبط اللي محتاجة تتصلّح.</p></div>
+        <div class="f reveal"><div class="ic">📝</div><h3>تشيك إن أسبوعي</h3><p>وزنك، وقياساتك، وإحساسك بالأسبوع، وصور قبل وبعد. كله بيوصل للكوتش في دقيقتين.</p></div>
+        <div class="f reveal"><div class="ic">💬</div><h3>شات وصوت</h3><p>كلّم الكوتش بالكتابة، أو برسالة صوتية، أو بصورة. ولو النت فصل، رسالتك بتتبعت أول ما يرجع.</p></div>
+        <div class="f reveal"><div class="ic">🛒</div><h3>قائمة مشتريات وتصدير</h3><p>قائمة مشتريات الأسبوع بالكيلو والتكلفة، واحفظ أي جدول PDF أو صورة أو Excel وابعته لأي حد.</p></div>
+        <div class="f reveal"><div class="ic">🏆</div><h3>شارات وتقارير</h3><p>تقرير كل أسبوع بدرجة التزامك، وشارات على كل إنجاز، علشان تفضل متحمّس.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screens" id="screens">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="tag">شكل التطبيق</span><h2>بسيط، وواضح، ومعمول ليك</h2><p>اسحب علشان تشوف باقي الشاشات ←</p></div>
+      <div class="rail">
+        <div class="shot"><img src="img/week.jpg" alt="الجدول الأسبوعي من الكوتش" loading="lazy"><b>جدول الأسبوع من الكوتش</b></div>
+        <div class="shot"><img src="img/plan.jpg" alt="جدول الأكل بالجرام" loading="lazy"><b>جدول الأكل بالجرام</b></div>
+        <div class="shot"><img src="img/log.jpg" alt="تسجيل الأكل بالصوت والصورة والباركود" loading="lazy"><b>سجّل أكلك في ثانية</b></div>
+        <div class="shot"><img src="img/gym.jpg" alt="مسجل الجيم" loading="lazy"><b>تمرينك خطوة بخطوة</b></div>
+        <div class="shot"><img src="img/chat.jpg" alt="الشات مع الكوتش" loading="lazy"><b>شات وفيديو مع الكوتش</b></div>
+        <div class="shot"><img src="img/progress.jpg" alt="التشيك إن والتقرير الأسبوعي" loading="lazy"><b>تشيك إن وتقرير أسبوعي</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="tag">إزاي تبدأ</span><h2>3 خطوات وتبدأ</h2></div>
+      <div class="steps">
+        <div class="step reveal"><h3>حمّل التطبيق</h3><p>اكتب وزنك وطولك وهدفك، والتطبيق يحسبلك السعرات والجدول على طول.</p></div>
+        <div class="step reveal"><h3>اربط حسابك بالكوتش</h3><p>اعمل حساب، وحسابك هيتربط بكوتش يوسف، وجدولك الأسبوعي هيبدأ يوصلك.</p></div>
+        <div class="step reveal"><h3>التزم واتابع</h3><p>علّم على وجباتك، وسجّل تمرينك، وابعت التشيك إن كل أسبوع، والكوتش يظبطلك البرنامج.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="coach">
+    <div class="wrap">
+      <div class="coach reveal">
+        <div class="avatar"><img src="img/coach.jpg" alt="كوتش يوسف"></div>
+        <div>
+          <span class="tag" style="color:var(--or);font-weight:900;font-size:14px">الكوتش</span>
+          <h2>كوتش يوسف</h2>
+          <p style="color:var(--muted);margin:0">YFit معمول علشان كل متدرب ياخد متابعة حقيقية، مش جدول ويتساب. الكوتش بيشوف التزامك يوم بيوم، ويرد على أسئلتك، ويعدّل برنامجك كل أسبوع حسب تقدمك.</p>
+          <ul>
+            <li>✅ <span><b>برنامج على مقاسك:</b> سعراتك وأكلك محسوبين على جسمك وهدفك.</span></li>
+            <li>✅ <span><b>متابعة كل أسبوع:</b> التشيك إن والصور بيوصلوا للكوتش، وبيرد عليك.</span></li>
+            <li>✅ <span><b>أكل من بيتك:</b> أصناف مصرية متوفرة، وبدائل لكل صنف.</span></li>
+          </ul>
+          <a class="btn btn-wa" style="margin-top:18px" href="https://wa.me/201121166099?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%83%D9%88%D8%AA%D8%B4%20%D9%8A%D9%88%D8%B3%D9%81%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B4%D8%AA%D8%B1%D9%83%20%D9%81%D9%8A%20YFit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> ابعت ليوسف على واتساب</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="tag">أسئلة</span><h2>أسئلة بتتسأل كتير</h2></div>
+      <div class="faq">
+        <details class="reveal"><summary>التطبيق بيشتغل من غير إنترنت؟</summary><p>أيوه. جدول الأكل والتمرين وتسجيل الوزن كلهم بيشتغلوا من غير نت، وبياناتك بتتحفظ على موبايلك. محتاج نت بس للشات، ولتحليل صور الأكل، ولمزامنة بياناتك مع الكوتش.</p></details>
+        <details class="reveal"><summary>مين يقدر يشوف بياناتي وصوري؟</summary><p>إنت والكوتش المرتبط بيك بس. صور التطور والرسايل محفوظة في مساحة خاصة ومحمية، ومحدش غيركم يقدر يوصلها. التفاصيل كلها في <a href="privacy.html">سياسة الخصوصية</a>.</p></details>
+        <details class="reveal"><summary>الأكل في الجدول مناسب للبيت المصري؟</summary><p>أيوه. التطبيق فيه أكتر من 230 صنف مصري، من الفول والكشري للفراخ والسمك، وتقدر تختار الأصناف المتوفرة عندك وميزانيتك، والجدول يتعمل منهم.</p></details>
+        <details class="reveal"><summary>أقدر أحذف حسابي؟</summary><p>طبعاً، في أي وقت ومن جوه التطبيق، وبياناتك بتتمسح نهائياً من السيرفر. شوف <a href="delete.html">خطوات حذف الحساب</a>.</p></details>
+        <details class="reveal"><summary>هل التطبيق بديل عن الدكتور؟</summary><p>لأ. YFit أداة متابعة وتنظيم للأكل والتمرين. لو عندك أي مشكلة صحية أو بتاخد علاج، راجع دكتورك الأول قبل ما تبدأ أي نظام غذائي.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="final reveal">
+        <h2>جاهز تبدأ؟</h2>
+        <p>التطبيق نازل قريب على جوجل بلاي. ابعتلنا على واتساب علشان تبقى من أول المتدربين.</p>
+        <a class="btn btn-ghost" href="https://wa.me/201121166099?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%83%D9%88%D8%AA%D8%B4%20%D9%8A%D9%88%D8%B3%D9%81%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B4%D8%AA%D8%B1%D9%83%20%D9%81%D9%8A%20YFit" target="_blank" rel="noopener" style="color:#128C7E"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg> واتساب: 01121166099</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top"><img src="img/logo.png" alt="" style="width:30px;height:30px;border-radius:9px">YFit | واي فِت</a>
+      <nav><a href="privacy.html">سياسة الخصوصية</a><a href="delete.html">حذف الحساب</a><a href="https://wa.me/201121166099?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%83%D9%88%D8%AA%D8%B4%20%D9%8A%D9%88%D8%B3%D9%81%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B4%D8%AA%D8%B1%D9%83%20%D9%81%D9%8A%20YFit" target="_blank" rel="noopener">واتساب</a><a href="mailto:saadmelshepiny@gmail.com">saadmelshepiny@gmail.com</a></nav>
+    </div>
+    <p class="disclaimer">© <span id="y">2026</span> YFit. المعلومات اللي في التطبيق للإرشاد العام، ومش بديل عن استشارة الطبيب.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>
